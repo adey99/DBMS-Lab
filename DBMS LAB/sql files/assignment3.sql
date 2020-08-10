@@ -1,0 +1,7 @@
+CREATE TABLE SUBJECT (SubjectCode varchar(6) NOT NULL PRIMARY KEY,SubjectName varchar(30) NOT NULL,DeptCode varchar(3) REFERENCES DEPARTMENT (DeptCode),Semester varchar(4) NOT NULL);
+
+INSERT INTO SUBJECT VALUES ('CS301','Data Structure','CSE','SEM3'),('CS302','Computer Organisation','CSE','SEM3'),('CS501','Discrete Mathematics','CSE','SEM5'),('CS502','Data Communication','CSE','SEM5'),('CS503','Operating Systems','CSE','SEM5'),('EC501','Analog Signals','ECE','SEM5'),('ECS501','Data Base systems','ECE','SEM5');
+
+CREATE TABLE RESULT (RollNo NUMBER(6) NOT NULL REFERENCES STUDENT(ROLLNO),Sub_code varchar(8) NOT NULL,Marks NUMBER(3) CHECK (Marks<=100),Pass_Marks NUMBER(2),PRIMARY KEY (RollNo,Sub_code));
+
+INSERT INTO RESULT VALUES (1001,'CS501',68,40),(1001,'CS502',38,40),(1002,'CS501',76,40),(1002,'CS502',81,40),(1003,'CS501',91,40),(1003,'CS502',82,40),(1023,'CS301',92,40),(1023,'CS302',75,40),(1029,'CS301',83,40),(1029,'CS302',71,40),(1500,'CS301',65,40),(1500,'CS302',35,40),(2001,'ECS501',67,30),(2002,'ECS501',72,30),(2101,'EC501',77,40);
